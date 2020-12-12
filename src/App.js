@@ -10,6 +10,7 @@ import Dashboard from './components/dashboard/Dashboard/Dashboard';
 import AddProducts from './components/dashboard/AddProducts/AddProducts';
 import NoMatch from './components/NoMatch/NoMatch';
 import AddAdmin from './components/dashboard/AddAdmin/AddAdmin';
+import ClothesDetails from './components/pages/ClothesDetail/ClothesDetail';
 
 
 export const UserContext = createContext();
@@ -29,8 +30,12 @@ function App() {
           </Route>
           <Route path='/makeAdmin'>
             <AddAdmin />
+          </Route>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route path='/products/:productKey'>
+            <ClothesDetails />
           </Route>
           <Route path='*'>
             <NoMatch />
