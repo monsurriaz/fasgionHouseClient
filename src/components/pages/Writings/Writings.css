@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+.product-h4{
+    font-family: 'Architects Daughter', cursive;
+    color: rgb(170, 96, 96);
+    font-weight: 600;
+}
+
+.product-h3{
+    font-family: 'Architects Daughter', cursive;
+    color: rgb(170, 96, 96);
+    font-weight: 600;
+}
+
+.paragraph{
+    width: 910px;
+    text-align: center;
+    margin-left: 220px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.products{
+    text-align: center;
+    margin-top: 50px;
+}

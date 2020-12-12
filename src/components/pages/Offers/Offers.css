@@ -1,0 +1,25 @@
+.flex{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 140px;
+}
+
+.order{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.list{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.width{
+    width: 190px;
+    text-align: center;
+}
+
+.two-margin{
+    margin-left: 250px;
+}
