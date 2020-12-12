@@ -1,0 +1,32 @@
+.slide{
+    display: flex;
+    flex-direction: row ;
+    width: 180vw;
+    transform: rotate(90deg) translateY(-70vh);
+    transform-origin:top left ;
+    overflow-x: scroll;
+}
+
+.outer-wrapper{
+    width: 70vh;
+    height: 94vw;
+    transform: rotate(-90deg) translateX(-70vh);
+    transform-origin:top left ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    top: 1615px;
+    margin-left: 60px;
+}
+
+.arrivals{
+    margin-bottom: 500px;
+    font-family: moret,serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 60px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
