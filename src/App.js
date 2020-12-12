@@ -5,7 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from './components/Home/Home';
+import Home from './components/pages/Home/Home';
 import Dashboard from './components/dashboard/Dashboard/Dashboard';
 import AddProducts from './components/dashboard/AddProducts/AddProducts';
 import NoMatch from './components/NoMatch/NoMatch';
@@ -20,9 +20,7 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
+          <Route path="/home" component={Home} />
           <Route path='/dashboard'>
             <Dashboard />
           </Route>
@@ -31,6 +29,8 @@ function App() {
           </Route>
           <Route path='/makeAdmin'>
             <AddAdmin />
+          <Route exact path='/'>
+            <Home />
           </Route>
           <Route path='*'>
             <NoMatch />

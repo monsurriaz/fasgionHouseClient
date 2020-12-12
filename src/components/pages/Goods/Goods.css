@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+.background-goods{
+    background:  url("https://i.imgur.com/MqCbAh1.jpg");
+  background-size: 700px;
+  background-position: left;
+  background-repeat: no-repeat;
+  color: #000;
+  height: 700px; 
+}
+
+.background-journal{
+    background:  url("https://i.imgur.com/UgDYEmJ.jpg");
+  background-size: 700px;
+  background-position: left;
+  background-repeat: no-repeat;
+  color: #000;
+  height: 700px; 
+
+}
+
+.flex{
+    display: flex;
+}
+
+.row{
+    padding: 0px;
+    margin-bottom: 30px;
+}
+
+.title{
+    font-family: 'DM Serif Display', serif;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 350px;
+    font-weight: bold;
+}
