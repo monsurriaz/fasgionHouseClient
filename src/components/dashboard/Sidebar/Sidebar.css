@@ -1,0 +1,12 @@
+.sidebar{
+    background-color: #fff;
+    min-height: 87vh;
+}
+
+.sidebar span{
+    /* color: #F3EFEB; */
+}
+
+.c_color{
+    color: rgb(170, 96, 96);
+}
