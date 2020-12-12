@@ -5,11 +5,10 @@ import Sidebar from '../Sidebar/Sidebar';
 import './Dashboard.css';
 
 
-
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
-        <div className="">
+        <div>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">

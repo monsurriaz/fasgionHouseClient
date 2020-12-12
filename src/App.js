@@ -9,6 +9,7 @@ import Home from './components/Home/Home';
 import Dashboard from './components/dashboard/Dashboard/Dashboard';
 import AddProducts from './components/dashboard/AddProducts/AddProducts';
 import NoMatch from './components/NoMatch/NoMatch';
+import AddAdmin from './components/dashboard/AddAdmin/AddAdmin';
 
 
 export const UserContext = createContext();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path='/addProducts'>
             <AddProducts />
+          </Route>
+          <Route path='/makeAdmin'>
+            <AddAdmin />
           </Route>
           <Route path='*'>
             <NoMatch />

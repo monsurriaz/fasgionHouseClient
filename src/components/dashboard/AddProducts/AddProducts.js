@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import DashboardNavbar from '../DashboardNavbar/DashboardNavbar';
+import Sidebar from '../Sidebar/Sidebar';
 
 const AddProducts = () => {
 
@@ -58,7 +60,6 @@ const AddProducts = () => {
     const upload = (e) => {
         uploadImage(e.target.files[0])
             .then(resp => {
-                // console.log(resp.data.data.thumb.url) // I'm aware it's data.data, that is how it returns stuff
                 const newObject = { ...productInfo }
                 newObject.imageUrl = resp.data.data.thumb.url;
                 setProductInfo(newObject);
@@ -67,50 +68,48 @@ const AddProducts = () => {
     }
    
     return (
-        <section className="dashboard">
+        <section>
             <div className="container-fluid">
-                <form onSubmit={handleFormSubmit}>
-                    <div className="row">
-                        <div className="col-md-6 col-lg-6 col-sm-12">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Service Title</label>
-                                <input onBlur={handleOnBlur} type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Product Title" />
-                            </div>
-                        </div>
-
-                        {/* <div className="col-md-6 col-lg-6 col-sm-12"> */}
-                            {/* <label>Price</label>
-                            <input onBlur={handleOnBlur} name="price" type="number" className="form-control" required />
-                            <br /> */}
-                        <div className="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleInputName1">Price</label>
-                                <input onBlur={handleOnBlur} type="number" class="form-control" name="price" id="exampleInputName1" placeholder="Pricedetail" />
-                            </div>
-                        </div>
-                        <div className="col-md-12">
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Thumbnail </label>
-                                <input onChange={upload} type="file" name="myFile" class="form-control-file" id="exampleFormControlFile1" />
-                                {
-                                    productInfo.imageUrl ? <img src={setProductInfo.imageUrl}  alt="" /> : <small className="text-mute">Image will be appeared here</small>
-                                }
-                            </div>
-
-                            {/* <label >Thumbnail</label>
-                            <br/>
-                            <input onChange={upload} type="file" name="myFile" />
-                            <br /> <br/>
-                            {
-                                productInfo.imageUrl ? <img src={setProductInfo.imageUrl}  alt="" /> : <small className="text-mute">Image will be appeared here</small>
-                            }
-                            <br /> */}
-                        </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <DashboardNavbar />
                     </div>
-                    <div className="ml-5">
-                        <button type="submit" className="brand-green-btn">Submit</button>
+                </div>
+                <div className="row">
+                    <div className="col-md-2">
+                        <Sidebar />
                     </div>
-                </form>
+                    <div className="col-md-10">
+                        <form onSubmit={handleFormSubmit}>
+                            <div className="row">
+                                <div className="col-md-6 col-lg-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Service Title</label>
+                                        <input onBlur={handleOnBlur} type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Product Title" />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Price</label>
+                                        <input onBlur={handleOnBlur} type="number" class="form-control" name="price" id="exampleInputName1" placeholder="Pricedetail" />
+                                    </div>
+                                </div>
+                                <div className="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Thumbnail </label>
+                                        <input onChange={upload} type="file" name="myFile" class="form-control-file" id="exampleFormControlFile1" />
+                                        {
+                                            productInfo.imageUrl ? <img src={setProductInfo.imageUrl}  alt="" /> : <small className="text-mute">Image will be appeared here</small>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="ml-5">
+                                <button type="submit" className="brand-green-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     );

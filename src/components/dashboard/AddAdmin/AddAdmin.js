@@ -23,14 +23,14 @@ const AddAdmin = () => {
     }
 
     return (
-        <div className="dashboard">
+        <div>
             <div className="container-fluid">
                 <DashboardNavbar />
                 <div className="row">
                     <div className="col-md-2">
                         <Sidebar />
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-md-10 dashboard">
                         <h3 className="my-4 ml-5">Add a admin</h3>
                         <div className="form-inner p-3">
                             <form className="px-4" onSubmit={handleSubmit(onSubmit)}>
