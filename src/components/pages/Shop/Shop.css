@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 .background-men{
     background:  url("https://i.imgur.com/oEoYZTW.jpg");
-  background-size: 700px;
+  background-size: 730px;
   background-position: left;
   background-repeat: no-repeat;
   color: #000;
-  height: 700px; 
+  height: 720px;
+  width: 700px; 
 }
 
 .background-women{
     background:  url("https://i.imgur.com/WGu5QCE.jpg");
-  background-size: 700px;
+  background-size: 730px;
   background-position: left;
   background-repeat: no-repeat;
   color: #000;
-  height: 700px; 
+  height: 720px; 
+  width: 700px;
 
 }
 
@@ -35,4 +37,19 @@
     text-align: center;
     padding-top: 350px;
     font-weight: bold;
+}
+
+
+.relative{
+  position: relative;
+  right: 20px;
+}
+
+.relative1{
+  position: relative;
+  left: 0px;
+}
+
+.text-decoration a:hover{
+  text-decoration: none !important;
 }
