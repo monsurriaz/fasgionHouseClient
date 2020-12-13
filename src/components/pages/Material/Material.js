@@ -10,7 +10,7 @@ const Material = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <div className="body1">
+            <div className="body4">
                 <h1 className="h11">Goods</h1>
             </div>
             <div className="background5">
