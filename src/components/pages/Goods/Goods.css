@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 .background-goods{
     background:  url("https://i.imgur.com/MqCbAh1.jpg");
-  background-size: 700px;
+  background-size: 730px;
   background-position: left;
   background-repeat: no-repeat;
   color: #000;
-  height: 700px; 
+  height: 720px;
+  width: 700px; 
 }
 
-.background-journal{
+.background-books{
     background:  url("https://i.imgur.com/UgDYEmJ.jpg");
-  background-size: 700px;
+  background-size: 730px;
   background-position: left;
   background-repeat: no-repeat;
   color: #000;
-  height: 700px; 
+  height: 720px; 
+  width: 700px;
 
 }
 
@@ -24,6 +26,7 @@
 
 .row{
     padding: 0px;
+    margin: 0px;
     margin-bottom: 30px;
 }
 
@@ -34,4 +37,19 @@
     text-align: center;
     padding-top: 350px;
     font-weight: bold;
+}
+
+
+.relative{
+  position: relative;
+  right: 20px;
+}
+
+.relative1{
+  position: relative;
+  left: 0px;
+}
+
+.text-decoration a:hover{
+  text-decoration: none !important;
 }
