@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../images/LogoMakr-8HUQ3T.png'
 import './NavBar.css';
 import CartIcon from '../../../images/shopping-cart-solid.svg';
+import close from '../../../images/times-solid.svg';
 
 const NavBar = () => {
     return (
@@ -30,7 +31,7 @@ const NavBar = () => {
                                 <Link className="nav-link" to='/addProduct'>Journal</Link>
                             </li>
                         </ul>
-                        <ul className="navbar-nav items ml-auto">
+                        <ul className="navbar-nav items ml-auto custom_nav">
                             <li className="nav-item">
                                 <span>0</span>
                                 <Link to='/cart'>
