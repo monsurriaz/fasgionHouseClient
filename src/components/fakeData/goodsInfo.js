@@ -33,7 +33,7 @@ var goodsInfo = [
          image: "https://i.imgur.com/US1gH43.jpg",
          key: "6", 
          name:"Bolt Beanie",
-         price:"$26.00",
+         price:"$26.01",
      },
     
 ]
