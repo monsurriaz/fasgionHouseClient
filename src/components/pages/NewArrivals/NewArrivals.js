@@ -6,7 +6,7 @@ import './NewArrivals.css'
 const NewArrivals = () => {
     const [clothes, setClothes] = useState([]);
     
-    const [cart, setCart] = useState([]);
+    // const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/showproducts')
@@ -14,7 +14,7 @@ const NewArrivals = () => {
         .then(data => {
             setClothes(data)
         })
-    }, [])
+    }, []);
 
     console.log(clothes);
     return (

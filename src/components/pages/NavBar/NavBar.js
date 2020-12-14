@@ -28,30 +28,35 @@ const NavBar = () => {
                                 <a class="nav-link" href="/womens">Women</a>
                             </li>
                             <li class="nav-item items2">
-<<<<<<< HEAD
                                 <Link className="nav-link" to="/dashboard">Dashboard</Link>
                             </li>
                             <li class="nav-item items2">
                                 <Link className="nav-link" to='/addProduct'>Journal</Link>
                             </li>
-                        </ul>
-                        <ul className="navbar-nav items ml-auto custom_nav">
-                            <li className="nav-item">
-                                <span>0</span>
-                                <Link to='/cart'>
-                                    <img src={CartIcon} alt="Fashion House"/>
-                                </Link>
+                            <li class="nav-item items2">
+                                <a class="nav-link" href="/books">Books</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item items2">
+                                <Link className="nav-link" to='/addProduct'>Journal</Link>
+                            </li>
+                            <li class="nav-item items2">
+                                <a class="nav-link" href="/goods">Goods</a>
+                            </li>
+                            <li class="nav-item items2">
                                 <Link className="nav-link" to='/login'>
                                     <button className="btn btn-success">Login</button>
                                 </Link>
-=======
-                                <a class="nav-link" href="goods">Goods</a>
                             </li>
-                            <li class="nav-item items2">
-                                <a class="nav-link" href="/books">Books</a>
->>>>>>> 6f7d7ee36fef685cf09de950cf29b5681af1ea27
+                        </ul>
+                        <ul className="navbar-nav items ml-auto custom_nav">
+                            <li className="close">
+                                <img src={close} alt="close-icon" width="20px"/>
+                            </li>
+                            <li className="nav-cart">
+                                <span>0</span>
+                                <Link to='/cart'>
+                                    <img src={CartIcon} alt="Fashion House" width="20px" />
+                                </Link>
                             </li>
                         </ul>
                     </div>

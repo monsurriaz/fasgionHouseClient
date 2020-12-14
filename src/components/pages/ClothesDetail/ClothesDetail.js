@@ -1,23 +1,53 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './ClothesDetail.css'
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 // import fakeData from '../../fakeData/clothesInfo';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
+import { UserContext } from '../../../App';
 
-const ClothesDetails = () => {
+
+const ClothesDetails = (props) => {
     const { productKey } = useParams();
+    const { addToCart, user, addCatDatabase } = useContext(UserContext)
+    const [quantity, setQuantity] = useState(1)
+    const [product, setProduct] = useState(null)
 
-    console.log(productKey);
-
-    const [product, setProduct] = useState({})
     console.log(product);
 
     useEffect(() => {
         fetch('http://localhost:5000/showproducts/' + productKey)
         .then(res => res.json())
         .then(data => setProduct(data))
-    }, [productKey])
+    }, [productKey]);
+
+    // onchange handler
+  const onchangeHandler = e => {
+    if (!isNaN(e.target.value)) {
+      setQuantity(e.target.value)
+    }
+  }
+
+  const location = useLocation()
+  const cartHandler = item => {
+    if (!user) {
+      props.history.push({
+        pathname: "/login",
+        state: { from: location.pathname }
+      })
+    } else {
+      addToCart({ ...item, quantity })
+      addCatDatabase(item, quantity, user);
+    }
+  }
+
+  const quantityHandler = quan => {
+    if (quantity < 0 || quantity === 0) {
+      setQuantity(0)
+    } else {
+      setQuantity(quantity - quan)
+    }
+  }
 
     // const product = fakeData.find(pd => pd.key === productKey);
     const { name, price, image } = product;
@@ -32,7 +62,25 @@ const ClothesDetails = () => {
                     <div className="name">
                         <h1 className="head2">{name}</h1>
                         <h3 className="head4">{price}</h3>
-                        <button className="cart">Add cart</button>
+
+                        <div className="input-group ml-4">
+                            <button
+                                className="btn btn-default"
+                                onClick={() => quantityHandler(1)}
+                                id="remove-product"><i className="fas fa-minus"></i></button>
+                            <input type="text"
+                                id="food-quantity"
+                                onChange={onchangeHandler}
+                                className="form-control text-center"
+                                value={quantity} />
+                            <button
+                            onClick={() => setQuantity(quantity * 1 + 1)}
+                            className="btn btn-default"
+                            id="add-product"><i className="fas fa-plus"></i></button>
+                        </div>
+
+                        <button className="cart" onClick={() => cartHandler(product)}>Add cart</button>
+
                         <div>
                             <div className="flex6">
                                 <div className="width1">
@@ -49,9 +97,6 @@ const ClothesDetails = () => {
                                 </div>
                             </div>
                         </div>
-
-
-
 
                         <div>
                             <div class="accordion accordion-flush" id="accordionFlushExample">
