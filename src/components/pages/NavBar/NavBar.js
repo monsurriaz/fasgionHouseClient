@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../images/LogoMakr-8HUQ3T.png'
-import './NavBar.css'
+import './NavBar.css';
+import CartIcon from '../../../images/shopping-cart-solid.svg';
 
 const NavBar = () => {
     return (
@@ -22,10 +24,23 @@ const NavBar = () => {
                                 <a class="nav-link" href="#">Women</a>
                             </li>
                             <li class="nav-item items2">
-                                <a class="nav-link" href="#">Goods</a>
+                                <Link className="nav-link" to="/dashboard">Dashboard</Link>
                             </li>
                             <li class="nav-item items2">
-                                <a class="nav-link" href="#">Journal</a>
+                                <Link className="nav-link" to='/addProduct'>Journal</Link>
+                            </li>
+                        </ul>
+                        <ul className="navbar-nav items ml-auto">
+                            <li className="nav-item">
+                                <span>0</span>
+                                <Link to='/cart'>
+                                    <img src={CartIcon} alt="Fashion House"/>
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link className="nav-link" to='/login'>
+                                    <button className="btn btn-success">Login</button>
+                                </Link>
                             </li>
                         </ul>
                     </div>

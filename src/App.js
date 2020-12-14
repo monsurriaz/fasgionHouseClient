@@ -18,6 +18,8 @@ import Womens from './components/pages/Womens/Womens';
 import WomenClothesDetail from './components/pages/WomensClothesDetail/WomenClothesDetail';
 import MaterialAllDetail from './components/pages/MaterialAllDetail/MaterialAllDetail';
 import Material from './components/pages/Material/Material'
+import AddtoDb from './components/AddtoDb/AddtoDb';
+import Login from './components/Login/Login';
 
 
 export const UserContext = createContext();
@@ -62,6 +64,12 @@ function App() {
           </Route>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route path='/addProduct'>
+            <AddtoDb />
+          </Route>
+          <Route path='/login'>
+            <Login />
           </Route>
           <Route path='*'>
             <NoMatch />

@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ClothesDetail.css'
 import { useParams } from 'react-router-dom';
-import fakeData from '../../fakeData/clothesInfo';
+// import fakeData from '../../fakeData/clothesInfo';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 
 const ClothesDetails = () => {
     const { productKey } = useParams();
-    const product = fakeData.find(pd => pd.key === productKey);
+
+    console.log(productKey);
+
+    const [product, setProduct] = useState({})
+    console.log(product);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/showproducts/' + productKey)
+        .then(res => res.json())
+        .then(data => setProduct(data))
+    }, [productKey])
+
+    // const product = fakeData.find(pd => pd.key === productKey);
     const { name, price, image } = product;
     return (
         <div className="color">
@@ -109,15 +121,6 @@ const ClothesDetails = () => {
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
