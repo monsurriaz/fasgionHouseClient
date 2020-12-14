@@ -18,22 +18,22 @@ var goodsInfo = [
         price:"$92.00",
     },
     {
-        image: "https://i.imgur.com/O06yBRG.jpg",
+        image: "https://i.imgur.com/7jlY42t.jpg",
         key: "4",
-        name:"P&Co Key Ring", 
-        price:"$20.00",
+        name:"Hometown Wool 5 Panel Cap", 
+        price:"$34.00",
      },
      {
-         image: "https://i.imgur.com/HZMFF97.jpg",
+         image: "https://i.imgur.com/bTlCgMX.jpg",
          key: "5", 
-         name: "Think Free Motel Key Fob",
-         price:"$20.00",
+         name: "2 Pack Wild Souls Bandana",
+         price:"$34.00",
      },
      {
-         image: "https://i.imgur.com/H8pjvP1.jpg",
+         image: "https://i.imgur.com/US1gH43.jpg",
          key: "6", 
-         name:"Good At Bad Decisions Leather Wallet",
-         price:"$92.00",
+         name:"Bolt Beanie",
+         price:"$26.00",
      },
     
 ]
