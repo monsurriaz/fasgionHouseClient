@@ -9,9 +9,9 @@ import { UserContext } from '../../../App';
 
 const ClothesDetails = (props) => {
     const { productKey } = useParams();
-    const { addToCart, user, addCatDatabase } = useContext(UserContext)
-    const [quantity, setQuantity] = useState(1)
-    const [product, setProduct] = useState(null)
+    // const { addToCart, user, addCatDatabase } = useContext(UserContext)
+    // const [quantity, setQuantity] = useState(1)
+    const [product, setProduct] = useState({})
 
     console.log(product);
 
@@ -21,33 +21,34 @@ const ClothesDetails = (props) => {
         .then(data => setProduct(data))
     }, [productKey]);
 
-    // onchange handler
-  const onchangeHandler = e => {
-    if (!isNaN(e.target.value)) {
-      setQuantity(e.target.value)
-    }
-  }
 
-  const location = useLocation()
-  const cartHandler = item => {
-    if (!user) {
-      props.history.push({
-        pathname: "/login",
-        state: { from: location.pathname }
-      })
-    } else {
-      addToCart({ ...item, quantity })
-      addCatDatabase(item, quantity, user);
-    }
-  }
+// onchange handler
+//   const onchangeHandler = e => {
+//     if (!isNaN(e.target.value)) {
+//       setQuantity(e.target.value)
+//     }
+//   }
 
-  const quantityHandler = quan => {
-    if (quantity < 0 || quantity === 0) {
-      setQuantity(0)
-    } else {
-      setQuantity(quantity - quan)
-    }
-  }
+//   const location = useLocation()
+//   const cartHandler = item => {
+//     if (!user) {
+//       props.history.push({
+//         pathname: "/login",
+//         state: { from: location.pathname }
+//       })
+//     } else {
+//       addToCart({ ...item, quantity })
+//       addCatDatabase(item, quantity, user);
+//     }
+//   }
+
+//   const quantityHandler = quan => {
+//     if (quantity < 0 || quantity === 0) {
+//       setQuantity(0)
+//     } else {
+//       setQuantity(quantity - quan)
+//     }
+//   }
 
     // const product = fakeData.find(pd => pd.key === productKey);
     const { name, price, image } = product;
@@ -63,7 +64,7 @@ const ClothesDetails = (props) => {
                         <h1 className="head2">{name}</h1>
                         <h3 className="head4">{price}</h3>
 
-                        <div className="input-group ml-4">
+                        {/* <div className="input-group ml-4">
                             <button
                                 className="btn btn-default"
                                 onClick={() => quantityHandler(1)}
@@ -77,9 +78,10 @@ const ClothesDetails = (props) => {
                             onClick={() => setQuantity(quantity * 1 + 1)}
                             className="btn btn-default"
                             id="add-product"><i className="fas fa-plus"></i></button>
-                        </div>
+                        </div> */}
 
-                        <button className="cart" onClick={() => cartHandler(product)}>Add cart</button>
+                        {/* <button className="cart" onClick={() => cartHandler(product)}>Add cart</button> */}
+                        <button className="cart">Add cart</button>
 
                         <div>
                             <div className="flex6">
