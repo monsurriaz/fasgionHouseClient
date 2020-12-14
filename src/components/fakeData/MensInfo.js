@@ -3,7 +3,7 @@ var MensInfo = [
        image: "https://i.imgur.com/5Ershlt.jpg",
        key: "1",
        name:"Outpost Waxed Canvas Jacket - Tan", 
-       price:"$300.00",
+       price:"$300.01",
     },
     {
         image: "https://i.imgur.com/ZW4YEi5.jpg",
