@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@700&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@700&family=Merriweather:wght@900&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.head2{
+    
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 30px;
+}
+.image{
+    margin-top: 100px;
+    margin-left: 180px;
+    padding-bottom: 100px;
+}
+.name{
+    font-size: 50px;
+    margin-top: 77px;
+    margin-left: 80px;
+}
+.head4{
+    font-weight: 400;
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+.color{
+    background-color: #f3efeb;
+}
+
+
+
+
+.flex6{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.order1{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+
+
+.width1{
+    width: 100px;
+    text-align: center;
+}
+
+.two-margin1{
+    margin-left: 80px;
+}
+
+
+.cart{
+    margin-top: 40px;
+    background-color: #c39d65;
+    color: #fff;
+    border: #c39d65;
+    font-size: 17px;
+    padding: 25px;
+    padding-left: 190px;
+    padding-right: 190px;
+    text-align: center;
+    line-height: 1;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+
+.accordion-body{
+    font-size: 16px !important;
+    width: 400px;
+    font-weight: 400;
+    position: sticky;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.accordion-button{
+    font-size: 18px !important;
+    width: 100%;
+    height: 60px;
+    color: black !important ;
+    background-color: transparent !important;
+
+}
