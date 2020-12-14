@@ -8,7 +8,10 @@ const NavBar = () => {
             <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <div className="margin-left">
+                        <a href="/home">
                         <img width="140px" src={logo} alt="logo" />
+                        </a>
+                        
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -16,16 +19,16 @@ const NavBar = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav items">
                             <li class="nav-item">
-                                <a class="nav-link"  href="#">Men</a>
+                                <a class="nav-link"  href="/mens">Men</a>
                             </li>
                             <li class="nav-item items2">
-                                <a class="nav-link" href="#">Women</a>
+                                <a class="nav-link" href="/womens">Women</a>
                             </li>
                             <li class="nav-item items2">
-                                <a class="nav-link" href="#">Goods</a>
+                                <a class="nav-link" href="goods">Goods</a>
                             </li>
                             <li class="nav-item items2">
-                                <a class="nav-link" href="#">Journal</a>
+                                <a class="nav-link" href="/books">Books</a>
                             </li>
                         </ul>
                     </div>

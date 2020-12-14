@@ -18,6 +18,8 @@ import Womens from './components/pages/Womens/Womens';
 import WomenClothesDetail from './components/pages/WomensClothesDetail/WomenClothesDetail';
 import MaterialAllDetail from './components/pages/MaterialAllDetail/MaterialAllDetail';
 import Material from './components/pages/Material/Material'
+import Books from './components/pages/Books/Books';
+import BooksAllDetail from './components/pages/BooksAllDetail/BooksAllDetail'
 
 
 export const UserContext = createContext();
@@ -39,6 +41,9 @@ function App() {
           <Route path="/goods">
             <Material></Material>
           </Route>
+          <Route path="/books">
+            <Books/>
+          </Route>
           <Route path="/womens">
             <Womens/>
           </Route>
@@ -53,6 +58,9 @@ function App() {
           </Route>
           <Route path='/attire/:attireKey'>
             <MensClothesDetail/>
+          </Route>
+          <Route path='/page/:pageKey'>
+            <BooksAllDetail/>
           </Route>
           <Route path='/cloth/:clothKey'>
             <WomenClothesDetail/>
