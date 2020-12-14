@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './Clothes.css'
 
 const Clothes = (props) => {
-    console.log(props.clothes);
+    console.log(props);
     const {name, price, image, key } = props.clothes;
-    console.log(name);
+    
     return (
         <div className="align">
             <Link to={`/products/${key}`}><img width="300px" src={image} alt=""/></Link>

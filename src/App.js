@@ -18,8 +18,13 @@ import Womens from './components/pages/Womens/Womens';
 import WomenClothesDetail from './components/pages/WomensClothesDetail/WomenClothesDetail';
 import MaterialAllDetail from './components/pages/MaterialAllDetail/MaterialAllDetail';
 import Material from './components/pages/Material/Material'
+<<<<<<< HEAD
+import AddtoDb from './components/AddtoDb/AddtoDb';
+import Login from './components/Login/Login';
+=======
 import Books from './components/pages/Books/Books';
 import BooksAllDetail from './components/pages/BooksAllDetail/BooksAllDetail'
+>>>>>>> 6f7d7ee36fef685cf09de950cf29b5681af1ea27
 
 
 export const UserContext = createContext();
@@ -70,6 +75,12 @@ function App() {
           </Route>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route path='/addProduct'>
+            <AddtoDb />
+          </Route>
+          <Route path='/login'>
+            <Login />
           </Route>
           <Route path='*'>
             <NoMatch />

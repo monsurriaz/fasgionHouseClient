@@ -20,7 +20,7 @@ const DashboardNavbar = () => {
                     <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <Link className="nav-link">
-                            {loggedInUser.name} Riaz
+                            {loggedInUser.name}
                         </Link>
                     </li>
                     </ul>
