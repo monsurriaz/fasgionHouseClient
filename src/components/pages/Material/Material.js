@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import './Material.css'
-import goodsInfo from '../../fakeData/goodsInfo';
+import React, { useEffect, useState } from 'react';
+import './Material.css';
 import Footer from '../Footer/Footer';
 import NavBar from '../NavBar/NavBar';
 import MaterialAll from '../MaterialAll/MaterialAll';
 
 const Material = () => {
-    const [material, setMaterial] = useState(goodsInfo);
+    const [material, setMaterial] = useState([]);
+    
+    useEffect(() => {
+        fetch('https://still-ridge-49659.herokuapp.com/showGoods')
+        .then(res => res.json())
+        .then(data => {
+            setMaterial(data)
+        })
+    }, [])
+    
     return (
         <div>
             <NavBar></NavBar>
@@ -35,12 +43,12 @@ const Material = () => {
                 </div>
             </div>
 
-            <div class="background5" style={{ paddingLeft: "17px" }}>
-                <div class="row justify-content " style={{ margin: "0" }} >
+            <div className="background5" style={{ paddingLeft: "17px" }}>
+                <div className="row justify-content " style={{ margin: "0" }} >
                     {
                         material.map(things => <MaterialAll
                             things={things}
-                            key={things.key}
+                            key={things._id}
                         ></MaterialAll>)
                     }
                 </div>

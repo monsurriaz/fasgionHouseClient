@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Womens.css'
-import womenInfo from '../../fakeData/womenInfo'
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 import WomensClothes from '../WomensClothes/WomensClothes';
 
 const Womens = () => {
-    const [womens, setWomens] = useState(womenInfo);
+    const [womens, setWomens] = useState([]);
+
+    useEffect(() => {
+        fetch('https://still-ridge-49659.herokuapp.com/showWomensProducts')
+        .then(res => res.json())
+        .then(data => {
+            setWomens(data)
+        })
+    });
+
     return (
         <div>
             <NavBar></NavBar>
@@ -36,11 +44,11 @@ const Womens = () => {
             </div>
 
                
-                    <div class="row container-fluid background5 justify-content" style={{margin:"0"}} >
+                    <div className="row container-fluid background5 justify-content" style={{margin:"0"}} >
                         {
                             womens.map(cloth => <WomensClothes
                                 cloth={cloth}
-                                key={cloth.key}
+                                key={cloth._id}
                             ></WomensClothes>)
                         }
                     </div>

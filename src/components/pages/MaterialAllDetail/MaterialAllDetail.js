@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './MaterialAllDetail.css'
-import fakeData4 from '../../fakeData/goodsInfo'
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 
 const MaterialAllDetail = () => {
     const { thingsKey } = useParams();
-    const things = fakeData4.find(pd => pd.key === thingsKey);
+    
+    const [things, setThings] = useState([]);
     const { name, price, image } = things;
+
+    useEffect(() => {
+        fetch('https://still-ridge-49659.herokuapp.com/showGoods/'+thingsKey)
+        .then(res => res.json())
+        .then(data => {
+            setThings(data)
+        })
+    }, [thingsKey]);
+
+    
     return (
         <div>
             <div className="color">
@@ -39,30 +49,27 @@ const MaterialAllDetail = () => {
                                 </div>
                             </div>
 
-
-
-
                             <div>
-                                <div class="accordion accordion-flush" id="accordionFlushExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <div className="accordion accordion-flush" id="accordionFlushExample">
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="flush-headingOne">
+                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                                 Description
                                         </button>
                                         </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">An improved version of our earlier deck jacket, it features storm cuffs, waist toggles & a storm front fastening to keep you warm in the coldest months. Includes 3 P&Co artwork stencils- so you can make it your own.</div>
+                                        <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div className="accordion-body">An improved version of our earlier deck jacket, it features storm cuffs, waist toggles & a storm front fastening to keep you warm in the coldest months. Includes 3 P&Co artwork stencils- so you can make it your own.</div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="flush-headingTwo">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="flush-headingTwo">
+                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                                 Details
 
                                         </button>
                                         </h2>
-                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">
+                                        <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                            <div className="accordion-body">
                                                 <ul>
                                                     <li>100% cotton twill</li>
                                                     <li>Sherpa-lined throughout</li>
@@ -73,15 +80,15 @@ const MaterialAllDetail = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="flush-headingThree">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="flush-headingThree">
+                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                                                 Fit
 
                                         </button>
                                         </h2>
-                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">
+                                        <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                            <div className="accordion-body">
                                                 <ul>
                                                     <li>This is a regular fit</li>
                                                     <li>True to size</li>
@@ -89,14 +96,14 @@ const MaterialAllDetail = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="flush-headingFour">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="flush-headingFour">
+                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
                                                 Delivery
                                         </button>
                                         </h2>
-                                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">
+                                        <div id="flush-collapseFour" className="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                            <div className="accordion-body">
                                                 <ul>
                                                     <li>Free worldwide shipping on all orders over $65.
                                                 </li>

@@ -7,7 +7,7 @@ const Header = () => {
         <div className="body">
             <h1 className="h1" >Winter Collection</h1>
             <h2 className="h2" >ONLINE NOW</h2>
-            <div class="d-flex margin">
+            <div className="d-flex margin">
 
                 <Link to="/mens">
                     <button className="button">

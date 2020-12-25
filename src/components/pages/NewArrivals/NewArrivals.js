@@ -4,15 +4,16 @@ import Clothes from '../Clothes/Clothes';
 import './NewArrivals.css'
 
 const NewArrivals = () => {
+
     const [clothes, setClothes] = useState([]);
     
     // const [cart, setCart] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/showproducts')
+        fetch('https://still-ridge-49659.herokuapp.com/showProducts')
         .then(res => res.json())
         .then(data => {
-            setClothes(data)
+            setClothes(data);
         })
     }, []);
 
@@ -26,7 +27,7 @@ const NewArrivals = () => {
                         {
                             clothes.map(clothes => <Clothes
                                 clothes={clothes}
-                                key={clothes.key}
+                                key={clothes._id}
                             ></Clothes>)
                         }
                     </div>

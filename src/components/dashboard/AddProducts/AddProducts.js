@@ -83,21 +83,21 @@ const AddProducts = () => {
                         <form onSubmit={handleFormSubmit}>
                             <div className="row">
                                 <div className="col-md-6 col-lg-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Service Title</label>
-                                        <input onBlur={handleOnBlur} type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Product Title" />
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputEmail1">Service Title</label>
+                                        <input onBlur={handleOnBlur} type="text" className="form-control" name="title" id="exampleInputEmail1" placeholder="Product Title" />
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputName1">Price</label>
-                                        <input onBlur={handleOnBlur} type="number" class="form-control" name="price" id="exampleInputName1" placeholder="Pricedetail" />
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputName1">Price</label>
+                                        <input onBlur={handleOnBlur} type="number" className="form-control" name="price" id="exampleInputName1" placeholder="Pricedetail" />
                                     </div>
                                 </div>
                                 <div className="col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Thumbnail </label>
-                                        <input onChange={upload} type="file" name="myFile" class="form-control-file" id="exampleFormControlFile1" />
+                                    <div className="form-group">
+                                        <label htmlFor="exampleFormControlFile1">Thumbnail </label>
+                                        <input onChange={upload} type="file" name="myFile" className="form-control-file" id="exampleFormControlFile1" />
                                         {
                                             productInfo.imageUrl ? <img src={setProductInfo.imageUrl}  alt="" /> : <small className="text-mute">Image will be appeared here</small>
                                         }

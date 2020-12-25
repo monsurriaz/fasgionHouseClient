@@ -1,15 +1,26 @@
 .g-signIn{
-    background: transparent;
     width: 280px;
-    border-radius: 20px;
+    margin: 0 auto 10px;
+    color: #000;
+    background: transparent;
     border: 1px solid gray;
-    margin-bottom: 10px;
-    color: lightgray;
+    border-radius: 20px;
     padding: 5px;
 }
 
 .card{
     padding: 20px 25px;
+}
+
+.span{
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.span:hover{
+    color: #0056b3;
 }
 
 .g-signIn img{

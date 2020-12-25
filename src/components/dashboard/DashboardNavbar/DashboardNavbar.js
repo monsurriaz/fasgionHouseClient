@@ -9,16 +9,16 @@ const DashboardNavbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white">
                 <Link className="navbar-brand">
                     <img className="logo" src={logo} alt="fashoin-house"/>
                 </Link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ms-auto">
+                    <li className="nav-item">
                         <Link className="nav-link">
                             {loggedInUser.name}
                         </Link>

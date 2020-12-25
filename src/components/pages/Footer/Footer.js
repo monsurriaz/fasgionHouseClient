@@ -29,7 +29,7 @@ const Footer = () => {
                             <a className="link" href="#">Contact</a>
                         </div>
                     </div>
-                    <div class="d-flex social">
+                    <div className="d-flex social">
                         <img width="40px" src="https://i.imgur.com/RzaVlkw.png" alt="" />
                         <img style={{ marginLeft: "20px" }} width="40px" src="https://i.imgur.com/IRQHGjc.png" alt="" />
                         <img style={{ marginLeft: "20px", position: "relative", top: "5px" }} width="40px" height="30px" src="https://i.imgur.com/1DLVE52.png" alt="" />
@@ -52,15 +52,15 @@ const Footer = () => {
                     <h1 className="title2" >Keep in touch</h1>
                           <h6 className="interested">I'm intereted in:</h6>
 
-                            <div class="container">
-                                <div class="checkbox">
+                            <div className="container">
+                                <div className="checkbox">
                                     <input type="checkbox" id="checkbox" name="" value=""/>
-                                    <label for="checkbox"><span>Women's</span></label>
+                                    <label htmlFor="checkbox"><span>Women's</span></label>
                                 </div>
 
-                                <div class="checkbox">
+                                <div className="checkbox">
                                     <input type="checkbox" id="checkbox2" name="" value=""/>
-                                    <label for="checkbox2"><span>Men's</span></label>
+                                    <label htmlFor="checkbox2"><span>Men's</span></label>
                                 </div>
                             </div>
 

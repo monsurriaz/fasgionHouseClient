@@ -27,7 +27,18 @@ import BooksAllDetail from './components/pages/BooksAllDetail/BooksAllDetail'
 export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState({
+      isSignIn: false,
+      name: '',
+      email: '',
+      password: '',
+      photo: '',
+      error: '',
+      message: '',
+      verify: '',
+      resetPassword: ''
+
+  })
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router >
@@ -49,6 +60,9 @@ function App() {
           <Route path="/womens">
             <Womens/>
           </Route>
+          <Route path="/womensCloth/:womensClothKey">
+            <WomenClothesDetail />
+          </Route>
           <Route path='/addProducts'>
             <AddProducts />
           </Route>
@@ -61,7 +75,7 @@ function App() {
           <Route path='/attire/:attireKey'>
             <MensClothesDetail/>
           </Route>
-          <Route path='/page/:pageKey'>
+          <Route path='/book/:bookKey'>
             <BooksAllDetail/>
           </Route>
           <Route path='/cloth/:clothKey'>

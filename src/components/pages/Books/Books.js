@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Books.css'
-import booksInfo from "../../fakeData/booksInfo"
 import NavBar from '../NavBar/NavBar';
 import BooksAll from "../BooksAll/BooksAll"
 import Footer from '../Footer/Footer';
 
 const Books = () => {
-    const [books, setBooks] = useState(booksInfo);
+    const [books, setBooks] = useState([]);
+    console.log('books :>> ', books);
+
+    useEffect(() => {
+        fetch('https://still-ridge-49659.herokuapp.com/showBooks')
+        .then(res => res.json())
+        .then(data => {
+            setBooks(data);
+        })
+    }, []);
+
     return (
         <div>
             <NavBar></NavBar>
@@ -35,12 +44,12 @@ const Books = () => {
                 </div>
             </div>
 
-            <div class="background5" style={{ paddingLeft: "17px" }}>
-                <div class="row justify-content " style={{ margin: "0" }} >
+            <div className="background5" style={{ paddingLeft: "17px" }}>
+                <div className="row justify-content " style={{ margin: "0" }} >
                     {
                         books.map(page => <BooksAll
                             page={page}
-                            key={page.key}
+                            key={page._id}
                         ></BooksAll>)
                     }
                 </div>

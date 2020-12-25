@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
-import MensInfo from '../../fakeData/MensInfo';
+import React, { useEffect, useState } from 'react';
 import Footer from '../Footer/Footer';
 import MensClothes from '../MensClothes/MensClothes';
 import NavBar from '../NavBar/NavBar';
 import './Mens.css'
 
 const Mens = () => {
-    const [mens, setMens] = useState(MensInfo);
+    const [mens, setMens] = useState([]);
+
+    useEffect(() => {
+        fetch('https://still-ridge-49659.herokuapp.com/showMensProducts')
+        .then(res => res.json())
+        .then(data => {
+            setMens(data);
+            console.log(data);
+        })
+    });
+
     return (
         <div>
             <NavBar></NavBar>
@@ -35,12 +44,12 @@ const Mens = () => {
                 </div>
             </div>
 
-            <div class="background5" style={{paddingLeft:"17px"}}>
-                <div class="row justify-content " style={{margin:"0"}} >
+            <div className="background5" style={{paddingLeft:"17px"}}>
+                <div className="row justify-content " style={{margin:"0"}} >
                     {
                         mens.map(attire => <MensClothes
                             attire={attire}
-                            key={attire.key}
+                            key={attire._id}
                         ></MensClothes>)
                     }
                 </div>
